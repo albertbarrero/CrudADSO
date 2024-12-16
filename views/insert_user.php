@@ -13,8 +13,15 @@
         <label for="">Numero de Documento</label>
         <input type="text" name="numero_documento" id=""><br>
 
-        <label for="">Tipo de Documento</label>
-        <input type="text" name="tipo_documento" id=""><br>
+        <!-- <label for="">Tipo de Documento</label>
+        <input type="text" name="tipo_documento" id=""><br> -->
+
+        <label for="tipo_documento">Tipo de Documento:</label>
+        <select name="tipo_documento" id="">
+        <?php foreach ($docums as $docum): ?>
+            <option value="<?= $docum['id']; ?>"><?= $docum['nomTipDocum']; ?></option>
+        <?php endforeach; ?> 
+        </select><br>
 
         <label for="">Nombre</label>
         <input type="text" name="nombre" id=""><br>

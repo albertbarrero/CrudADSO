@@ -11,5 +11,14 @@
     <form action="index.php?action=insertUser" method="GET">
         <button type="submit" name="action" value="insertUser">Insertar Usuario</button>
     </form>
+
+    <form action="index.php?action=listUsers" method="GET">
+        <button type="submit" name="action" value="listUsers">Consultar Usuarios</button>
+    </form>
+
+    <form action="index.php?action=searchUserByName" method="GET">
+        <button type="submit" name="action" value="searchUserByName">Usuarios por Nombre</button>
+    </form>
+
 </body>
 </html>

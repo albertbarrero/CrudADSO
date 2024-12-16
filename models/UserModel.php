@@ -13,4 +13,17 @@ class UserModel{
         $stmt = $this->conn->prepare($query);
         $stmt->execute([$document_number, $document_type, $name, $phone, $photo]);
     }
+
+    public function getUsers(){
+        $query = "SELECT * FROM " . $this->table;
+        $stmt=$this->conn->query($query);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getUsersByName($name){
+        $query = "SELECT * FROM " . $this->table . " WHERE nombre LIKE ?";
+        $stmt=$this->conn->prepare($query);
+        $stmt->execute(['%' .$name . '%']);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
