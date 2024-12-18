@@ -20,5 +20,13 @@
         <button type="submit" name="action" value="searchUserByName">Usuarios por Nombre</button>
     </form>
 
+    <form action="index.php?action=openForm" method="GET">
+        <button type="submit" name="action" value="openForm">Actualizar Usuario</button>
+    </form>
+
+    <form action="index.php?action=openFormDelete" method="GET">
+        <button type="submit" name="action" value="openFormDelete">Eliminar Usuario</button>
+    </form>
+
 </body>
 </html>

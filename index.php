@@ -28,6 +28,32 @@ switch ($action) {
         include './views/list_user_By_Name_Form.php';
         break;
 
+    case 'openForm':
+        $users = $userController->listUsers();
+        include './views/list_user_By_Num_Docum.php';
+        break;
+
+    case 'searchUserByNumberDocum':
+        $users = $userController->UserByNumDocum();
+        $docums = $TipDocumController->listTipDocum(); 
+        include './views/update_user.php';
+        break;
+
+    case 'actualizar':
+        $users = $userController->actualizar();
+        include './views/dashboard.php';
+        break;
+
+    case 'openFormDelete':
+        $users = $userController->listUsers();
+        include './views/delete_user_By_Num_Docum.php';
+        break;
+
+    case 'eliminar':
+        $users=$userController->eliminar();
+        include './views/dashboard.php';
+        break;
+        
     default:
         include './views/dashboard.php';
         break;
