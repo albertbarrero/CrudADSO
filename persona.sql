@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 16-12-2024 a las 18:22:33
+-- Tiempo de generación: 22-02-2025 a las 02:00:57
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.18
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `tipdocum` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nomTipDocum` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `tipdocum`
@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS `tipdocum` (
 INSERT INTO `tipdocum` (`id`, `nomTipDocum`) VALUES
 (1, 'CC'),
 (2, 'TI'),
-(3, 'RC');
+(3, 'RC'),
+(5, 'Pasaporte');
 
 -- --------------------------------------------------------
 
@@ -57,28 +58,24 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `nombre` varchar(100) DEFAULT NULL,
   `telefono` varchar(15) DEFAULT NULL,
   `foto` varchar(255) DEFAULT NULL,
+  `rol` varchar(20) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `tipo_documento` (`tipo_documento`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `numero_documento`, `tipo_documento`, `nombre`, `telefono`, `foto`) VALUES
-(1, '1234', 2, 'Albert', '147', 'Ofimatica.jpg'),
-(2, '456', 2, 'Veronica B', '258', 'java.png'),
-(3, '789', 1, 'Manuel', '369', 'MySQL.jpeg'),
-(4, '321', 1, 'Paula M', '741', '11.png'),
-(5, '654', 2, 'Marcela', '963', 'php.jpg'),
-(6, '5825', 2, 'Andres', '3115', 'VOZ.png'),
-(7, '1110234567', 3, 'Mariana', NULL, NULL),
-(8, '1110234567', 3, 'Mariana', NULL, NULL),
-(9, '987456', 2, 'Juanito', '7458', 'ADSI2.jpg'),
-(10, NULL, NULL, NULL, NULL, NULL),
-(11, '5789456', 3, 'Paulina', '3112356789', 'carro.jpg'),
-(12, NULL, NULL, NULL, NULL, NULL),
-(13, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `usuarios` (`id`, `numero_documento`, `tipo_documento`, `nombre`, `telefono`, `foto`, `rol`, `email`, `password`) VALUES
+(1, '1234', 2, 'Albert', '147', 'Ofimatica.jpg', 'admin', 'albert@gmail.com', 'admi'),
+(2, '456', 2, 'Veronica B', '258', 'java.png', 'empleado', 'veronica@gmail.com', 'employe'),
+(4, '321', 1, 'Paula M', '741', '11.png', 'empleado', 'paula@gmail.com', 'employe'),
+(5, '654', 2, 'Marcela', '963', 'php.jpg', 'empleado', 'marcela@gmail.com', 'employe'),
+(6, '5825', 2, 'Andres', '3115', 'VOZ.png', 'empleado', 'andres@gmail.com', 'employe'),
+(7, '6666', 1, 'Paulina', '3216545', 'python.png', 'empleado', 'paulina@gmail.com', 'employe');
 
 --
 -- Restricciones para tablas volcadas

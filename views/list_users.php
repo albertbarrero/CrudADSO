@@ -2,38 +2,36 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuarios</title>
+    <title>Lista de Usuarios</title>
 </head>
 <body>
+    
     <h1>Lista de Usuarios</h1>
-
     <table border="1">
         <thead>
             <tr>
-                <th>Numero de Documento</th>
-                <th>Tipo de Docuemnto</th>
+                <th>Número de Documento</th>
+                <th>Tipo de Documento</th>
                 <th>Nombre</th>
-                <th>Telefono</th>
+                <th>Teléfono</th>
                 <th>Foto</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($users as $user): ?>
-                <tr>
-                    <td><?= $user['numero_documento']; ?></td>
-                    <td><?= $user['tipo_documento']; ?></td>
-                    <td><?= $user['nombre']; ?></td>
-                    <td><?= $user['telefono']; ?></td>
-                    <td><img src="photo/<?= $user['foto']; ?>" width="100" alt="foto"></td>
-                </tr>
+            <tr>
+                <td><?= $user['numero_documento']; ?></td>
+                <td><?= $user['tipo_documento']; ?></td>
+                <td><?= $user['nombre']; ?></td>
+                <td><?= $user['telefono']; ?></td>
+                <td><img src="photo/<?= $user['foto']; ?>" width="100" alt="Foto"></td>
+            </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
 
-    <form action="index.php?action=dashboard" method="POST">
+    <form action="index.php?action=dashboard" method="post" enctype="multipart/form-data">
         <button type="submit" name="action" value="dashboard">Dashboard</button>
     </form>
-
 </body>
 </html>

@@ -3,17 +3,18 @@
 require_once './models/TipDocumModel.php';
 require_once './config/database.php';
 
-class TipDocumController{
+class TipDocumController {
     private $db;
-    private $tipDocumModel;
+    private $TipDocumModel;
 
-    public function __construct(){
+    public function __construct() {
         $database = new Database();
         $this->db = $database->getConnection();
-        $this->tipDocumModel = new TipDocumModel($this->db);            
+        $this->TipDocumModel = new TipDocumModel($this->db);
     }
 
-    public function listTipDocum(){
-        return $this->tipDocumModel->getTipDocum();
+    public function listTipDocum() {
+        return $this->TipDocumModel->getTipDocum();
     }
 }
+?>

@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insertar Usuario</title>
 </head>
+
 <body>
-
-    <h1>INSERTAR USUARIO</h1>
-
+    <!-- <?php var_dump($docums) ?> -->
+    <h1>Insertar Usuario</h1>
     <form action="index.php?action=insertUser" method="POST" enctype="multipart/form-data">
-        <label for="">Numero de Documento</label>
-        <input type="text" name="numero_documento" id=""><br>
-
-        <!-- <label for="">Tipo de Documento</label>
-        <input type="text" name="tipo_documento" id=""><br> -->
+        <label for="numero_documento">Número de Documento:</label>
+        <input type="text" name="numero_documento" required><br>
 
         <label for="tipo_documento">Tipo de Documento:</label>
         <select name="tipo_documento" id="">
-        <?php foreach ($docums as $docum): ?>
-            <option value="<?= $docum['id']; ?>"><?= $docum['nomTipDocum']; ?></option>
-        <?php endforeach; ?> 
+            <?php foreach ($docums as $docum): ?>
+                <option value="<?= $docum['id']; ?>"><?= $docum['nomTipDocum']; ?></option>
+            <?php endforeach; ?>
         </select><br>
 
-        <label for="">Nombre</label>
-        <input type="text" name="nombre" id=""><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br>
 
-        <label for="">Telefono</label>
-        <input type="text" name="telefono" id=""><br>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" name="telefono" required><br>
 
-        <label for="">Foto</label>
+        <label for="foto">Foto:</label>
         <input type="file" name="foto" required><br>
 
         <input type="submit" value="Guardar">
     </form>
 
-    <form action="index.php?action=dashboard" method="POST">
+    <form action="index.php?action=dashboard" method="post">
         <button type="submit" name="action" value="dashboard">Dashboard</button>
     </form>
-
 </body>
+
 </html>
